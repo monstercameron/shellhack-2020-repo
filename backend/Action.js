@@ -1,6 +1,11 @@
 const app = require("express")();
 app.use(require("body-parser").json());
 app.use(require("cookie-parser")());
+const corsOptions = {
+  origin: true,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(require("cors")(corsOptions));
 
 const admin = require("firebase-admin");
 const serviceAccount = require("../secrets/shellhacks2020-290701-firebase-adminsdk-h0fgi-1b93221de5.json");

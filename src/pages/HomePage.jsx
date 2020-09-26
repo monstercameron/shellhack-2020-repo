@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const Homepage = () => {
   return (
     <>
@@ -27,9 +28,11 @@ const Homepage = () => {
               </a>
             </li>
           </ul>
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
+          <Link to="/dashboard">
+            <button class="btn btn-outline-success" type="submit">
+              Dashboard
+            </button>
+          </Link>
         </div>
       </nav>
 
@@ -47,7 +50,7 @@ const Homepage = () => {
                   height: "100%",
                   width: "100%",
                   zIndex: "100",
-                  top:'10em'
+                  top: "10em",
                 }}
               >
                 <div className="container-fluid">
