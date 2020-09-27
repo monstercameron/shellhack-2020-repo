@@ -26,6 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server:actions": "npx nodemon ./backend/Action.js",
+    "server:start": "npx nodemon ./backend/Server.js",
     "gcloud": "functions-framework --target=helloWorld"
   },
   "eslintConfig": {
