@@ -1,29 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import car1 from "../media/car-1.png";
+import customer from "../media/customer.jpg";
+import cloud from "../media/cloud.jpg";
+import sms from "../media/sms.png";
 const Homepage = () => {
   return (
     <>
-      <nav class="navbar navbar-light bg-light">
+      <nav id="top" class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span className="navbar-brand">Navbar</span>
+          <span className="navbar-brand">License Automation</span>
           <ul className="nav ml-auto mb-2 mb-lg-0">
             <li className="nav-item text-capitalize">
-              <a className="nav-link" href="#/#about">
+              <a className="nav-link" href="#about">
                 about
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/#features">
+              <a className="nav-link" href="#features">
                 features
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/#team">
+              <a className="nav-link" href="#team">
                 team
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/#contact">
+              <a className="nav-link" href="#contact">
                 contact
               </a>
             </li>
@@ -42,7 +46,7 @@ const Homepage = () => {
           <div className="col-12 p-0">
             <div
               className="border"
-              style={{ height: "40em", width: "100%", position: "relative" }}
+              style={{ height: "35em", width: "100%", position: "relative" }}
             >
               <div
                 style={{
@@ -50,20 +54,19 @@ const Homepage = () => {
                   height: "100%",
                   width: "100%",
                   zIndex: "100",
-                  top: "10em",
+                  paddingTop: "10em",
+                  backgroundColor: "rgba(200,255,200,.7)",
                 }}
               >
                 <div className="container-fluid">
                   <div className="row">
                     <div className="col-8 mx-auto text-center mt-5">
-                      <h4>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Explicabo tempora maxime dolorem eligendi omnis, veniam
-                        possimus, earum nostrum eaque accusantium asperiores eos
-                        fugit. Modi distinctio quidem culpa tenetur. Quis, odit?
-                      </h4>
+                      <h2>
+                        Enhance any security camera with Plategate to speed up
+                        check-in process
+                      </h2>
                     </div>
-                    <div className="col-8 mx-auto">
+                    <div className="col-8 mx-auto mt-5">
                       <button className="text-capitalize d-block mx-auto btn btn-primary">
                         register today
                       </button>
@@ -80,9 +83,9 @@ const Homepage = () => {
                 }}
               >
                 <img
-                  src="https://via.placeholder.com/160x90"
+                  src={car1}
                   className="img-fluid d-block h-100 w-100"
-                  style={{ zIndex: "99" }}
+                  style={{ zIndex: "99", filter: "blur(4px)" }}
                   alt=""
                 />
               </div>
@@ -90,7 +93,7 @@ const Homepage = () => {
           </div>
         </div>
         {/* about */}
-        <div className="row">
+        <div id="about" className="row">
           <div className="col-8 mx-auto mt-5">
             <div className="row">
               {" "}
@@ -100,24 +103,33 @@ const Homepage = () => {
             </div>
             <div className="row">
               <div className="col-12 mt-3 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos iure rem dolor non voluptatem reprehenderit
-                eligendi? Ipsa quo, ut voluptatibus, optio accusantium debitis
-                numquam, molestias sed ex recusandae explicabo quam.
+                At Playgate, we believe that great technology should benefit
+                everyone. In 2020, we founded our company with the goal of
+                harnessing the power of robotics and artificial intelligence to
+                solve challenges at a global scale. We built Nuro to make life
+                easier, to help connect us to the things we need, and to give us
+                time back with the people we love. Today we are one of the
+                leading autonomous delivery companies, committed to using the
+                power of technology for the greater good.
               </div>
             </div>
             <div className="row">
               <div className="col-12 mt-3 text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                perferendis dolorum ratione excepturi quas provident soluta cum
-                ea dignissimos nihil. Omnis eos maxime non numquam dolorum
-                blanditiis explicabo neque in.
+                {" "}
+                We are a team of over 500 people, all working together and
+                motivated by a driving belief to improve the way we live through
+                robotics. We believe that the only way to change the world is to
+                have the best possible team come together, and it is the people
+                at Nuro that make us the most proud. Together, we are pushing
+                the boundaries of robotics to improve human life. We are
+                creating vehicles that will change, simplify, and enhance the
+                way we live.
               </div>
             </div>
           </div>
         </div>
         {/* Features */}
-        <div className="row">
+        <div id="features" className="row">
           <div className="col-8 mx-auto mt-5">
             <div className="row">
               <div className="col-auto mx-auto text-center mb-3">
@@ -127,7 +139,7 @@ const Homepage = () => {
             <div className="row mb-5">
               <div className="col-5">
                 <img
-                  src="https://via.placeholder.com/160x90"
+                  src={customer}
                   className="img-fluid d-block h-100 w-100"
                   alt=""
                 />
@@ -136,12 +148,12 @@ const Homepage = () => {
               <div className="col-5">
                 <div className="row">
                   <div className="col-12">
-                    <h4>sub heading</h4>
+                    <h4>Personalized customer experience</h4>
                   </div>
                   <div className="col-12">
-                    {" "}
-                    test test test test test test test test test test test test
-                    test test test test test test test test test test test test{" "}
+                    Monitor the health and revenue of your channel program and
+                    streamline your campaign to win more customers within
+                    Zomentum.
                   </div>
                 </div>
               </div>
@@ -150,19 +162,19 @@ const Homepage = () => {
               <div className="col-5">
                 <div className="row">
                   <div className="col-12">
-                    <h4>sub heading</h4>
+                    <h4>Cloud-based license plate recognition solution</h4>
                   </div>
                   <div className="col-12">
-                    {" "}
-                    test test test test test test test test test test test test
-                    test test test test test test test test test test test test{" "}
+                    Gain brand authority and visibility with the help of the
+                    largest IT service ecosystem. Find customers who are looking
+                    for your solution right now!
                   </div>
                 </div>
               </div>
               <div className="col-2"></div>
               <div className="col-5">
                 <img
-                  src="https://via.placeholder.com/160x90"
+                  src={cloud}
                   className="img-fluid d-block h-100 w-100"
                   alt=""
                 />
@@ -171,7 +183,7 @@ const Homepage = () => {
             <div className="row">
               <div className="col-5">
                 <img
-                  src="https://via.placeholder.com/160x90"
+                  src={sms}
                   className="img-fluid d-block h-100 w-100"
                   alt=""
                 />
@@ -180,12 +192,12 @@ const Homepage = () => {
               <div className="col-5">
                 <div className="row">
                   <div className="col-12">
-                    <h4>sub heading</h4>
+                    <h4>Recieve text notifications</h4>
                   </div>
                   <div className="col-12">
-                    {" "}
-                    test test test test test test test test test test test test
-                    test test test test test test test test test test test test{" "}
+                    Share collaterals and documents that are automatically
+                    branded. Leverage a rich partner network that sells your
+                    solution exactly the way your best salesman would.
                   </div>
                 </div>
               </div>
@@ -193,7 +205,7 @@ const Homepage = () => {
           </div>
         </div>
         {/* team */}
-        <div className="row">
+        <div id="team" className="row">
           <div className="col-12">
             <div className="row">
               <div className="col-auto mx-auto text-center my-5">
@@ -257,7 +269,7 @@ const Homepage = () => {
           </div>
         </div>
         {/* contact form */}
-        <div className="row">
+        <div id="contact" className="row">
           <div className="col-12 mx-auto text-center my-5">
             <h2>Contact</h2>
           </div>
@@ -363,6 +375,27 @@ const Homepage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="text-dark rounded shadow p-1"
+        style={{
+          position: "fixed",
+          backgroundColor: "white",
+          bottom: "10px",
+          right: "10px",
+          zIndex: "1000",
+          textDecoration: "none",
+        }}
+      >
+        <a
+          href="#top"
+          style={{
+            textDecoration: "none",
+          }}
+          className="text-capitalize"
+        >
+          to top
+        </a>
       </div>
     </>
   );
