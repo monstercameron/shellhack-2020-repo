@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 export const Context = React.createContext(null);
-export const BASEURL = "localhost:3000";
+export const BASEURL = "http://localhost:3000";
 
 export const injectContext = (PassedComponent) => {
   const StoreWrapper = (props) => {
@@ -44,14 +44,14 @@ export const injectContext = (PassedComponent) => {
 
 const getState = ({ getStore, getActions, setStore }) => {
   return {
-    store: { actioms: null, data: null, events: null, token: null },
+    store: { actions: null, data: null, events: null, token: null },
     actions: {
       getActions: async () => {
         try {
-          const response = await axios(`${BASEURL}/action`, {
+          const {data} = await axios(`${BASEURL}/action`, {
             headers: { uuid: "test-uuid" },
           });
-          console.log(response);
+          setStore({actions:data})
         } catch (error) {
           alert("getactions error");
         }

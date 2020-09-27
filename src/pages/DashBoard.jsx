@@ -1,46 +1,94 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../context/store";
 const Homepage = () => {
-  const [view, setView] = useState("events");
+  const [view, setView] = useState("actions");
   const { actions, store } = useContext(Context);
-    useEffect(() => {
-        actions.getActions()
-    });
+  useEffect(() => {
+    actions.getActions();
+  }, []);
+  console.log(store);
   return (
-    <div className="containder-fluid">
-      <div className="row px-2 py-2" style={{ backgroundColor: "grey" }}>
-        <div className="col-9">Plate Gate Dashboard</div>
-        <div className="col-3 text-right">sign in with google</div>
+    <div
+      className="containder-fluid"
+      style={{ backgroundColor: "rgba(0,0,0,.05)" }}
+    >
+      <div className="row align-items-end">
+        <div
+          className="col-3 text-white text-center text-capitalize"
+          style={{ backgroundColor: "black" }}
+        >
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <h2>PlateGate</h2>
+          </Link>
+        </div>
+        <div
+          className="col-9 text-right pr-4 pb-2 shadow"
+          style={{ cursor: "pointer" }}
+        >
+          sign in with google
+          <span
+            className="material-icons ml-2"
+            style={{ verticalAlign: "middle", fontSize: "2em" }}
+          >
+            account_circle
+          </span>
+        </div>
       </div>
       <div className="row">
-        <div className="col-2 pl-4 pt-2">
-          <ul className="nav flex-column">
+        <div
+          className="col-3 pt-2"
+          style={{ backgroundColor: "rgba(0,0,0,.80)" }}
+        >
+          <ul className="nav flex-column pl-4 text-muted">
             <li
-              className={`nav-item p-1 border ${view === "events" && "shadow"}`}
+              className={`nav-item my-3 ${
+                view === "events" && "shadow text-white"
+              }`}
               style={{ cursor: "pointer" }}
               onClick={() => setView("events")}
             >
+              <span
+                className="material-icons mr-2"
+                style={{ verticalAlign: "middle" }}
+              >
+                calendar_today
+              </span>
               Events
             </li>
             <li
-              className={`nav-item p-1 border ${
-                view === "actions" && "shadow"
+              className={`nav-item my-3 ${
+                view === "actions" && "shadow text-white"
               }`}
               style={{ cursor: "pointer" }}
               onClick={() => setView("actions")}
             >
+              <span
+                className="material-icons mr-2"
+                style={{ verticalAlign: "middle" }}
+              >
+                directions_run
+              </span>
               Actions
             </li>
             <li
-              className={`nav-item p-1 border ${view === "data" && "shadow"}`}
+              className={`nav-item my-3 ${
+                view === "data" && "shadow text-white"
+              }`}
               style={{ cursor: "pointer" }}
               onClick={() => setView("data")}
             >
+              <span
+                className="material-icons mr-2"
+                style={{ verticalAlign: "middle" }}
+              >
+                storage
+              </span>
               Data
             </li>
           </ul>
         </div>
-        <div className="col-10">
+        <div className="col-9">
           {/* actions */}
           <div
             className="container"
@@ -49,24 +97,46 @@ const Homepage = () => {
             }
           >
             <div className="row">
-              <div className="col-3">
+              <div
+                className="col-3 mt-4 mb-3 shadow-sm"
+                style={{ backgroundColor: "white", height: "90vh" }}
+              >
                 <div className="row">
-                  <div className="col-12 p-1 text-center">Actions</div>
-                  <div className="col-12 p-1 border">Default plate scan</div>
-                  <div className="col-12 p-1 border shadow">VIP plate scan</div>
+                  <div className="col-12 shadow-sm">
+                    <div className="row">
+                      <div className="col-12 p-1">ACTION NAME</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="row">
+                      <div className="col-12 p-1 border-bottom">
+                        Default actions
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="col-12"
+                    style={{ backgroundColor: "rgba(0,0,0,.05)" }}
+                  >
+                    <div className="row">
+                      <div className="col-12 p-1 border-bottom">CEO action</div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="row">
+                      <div className="col-12 p-1 border-bottom">VIP action</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-9">
-                {/* crud actions */}
-                <div className="row">
-                  <div className="col-4 p-1 border text-center">New</div>
-                  <div className="col-4 p-1 border text-center">Update</div>
-                  <div className="col-4 p-1 border text-center">Delete</div>
-                </div>
                 {/* action view */}
-                <div className="row">
-                  <div className="col-12 p-1 border">
-                    <div className="row p-4">
+                <div className="row m-0 p-0">
+                  <div
+                    className="col-12 mt-4 mr-5 ml-2 py-4 px-4 shadow-sm border"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    <div className="row">
                       <div className="col-12 mb-2">Actions:</div>
                       <div className="col-12 my-2">
                         <input type="checkbox" name="" id="" /> OnIngress
@@ -223,52 +293,99 @@ const Homepage = () => {
             }
           >
             <div className="row">
-              <div className="col-5">
+              <div
+                className="col-7 mt-4 mb-3 shadow-sm"
+                style={{ backgroundColor: "white", height: "90vh" }}
+              >
                 <div className="row">
-                  <div className="col-12 p-1 border shadow">
-                    Egress: plate# 007-0007 2020-09-22 17:55:02
+                  <div className="col-12 shadow-sm">
+                    <div className="row">
+                      <div className="col-4 p-1">PLATE ID</div>
+                      <div className="col-5 p-1">DATE</div>
+                      <div className="col-3 p-1">Time</div>
+                    </div>
                   </div>
-                  <div className="col-12 p-1 border">
-                    Ingress: plate# 007-0007 2020-09-22 17:55:02
+                  <div className="col-12">
+                    <div className="row">
+                      <div className="col-4 p-1 border-bottom">007-0007</div>
+                      <div className="col-5 p-1 border-bottom">2020-09-22</div>
+                      <div className="col-3 p-1 border-bottom">17:55:02</div>
+                    </div>
                   </div>
-                  <div className="col-12 p-1 border">
-                    Egress: plate# 007-0008 2020-09-22 17:55:02
+                  <div
+                    className="col-12"
+                    style={{ backgroundColor: "rgba(0,0,0,.05)" }}
+                  >
+                    <div className="row">
+                      <div className="col-4 p-1 border-bottom">007-0008</div>
+                      <div className="col-5 p-1 border-bottom">2020-09-22</div>
+                      <div className="col-3 p-1 border-bottom">17:30:02</div>
+                    </div>
                   </div>
-                  <div className="col-12 p-1 border">
-                    Ingress: plate# 007-0008 2020-09-22 17:55:02
-                  </div>
-                  <div className="col-12 p-1 border">
-                    Egress: plate# 007-0009 2020-09-22 17:55:02
-                  </div>
-                  <div className="col-12 p-1 border">
-                    Ingress: plate# 007-0009 2020-09-22 17:55:02
+                  <div className="col-12">
+                    <div className="row">
+                      <div className="col-4 p-1 border-bottom">007-0007</div>
+                      <div className="col-5 p-1 border-bottom">2020-09-22</div>
+                      <div className="col-3 p-1 border-bottom">17:15:02</div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-7">
-                <div className="row p-1">
-                  <div className="col-12 mt-5 text-center">
-                    Plate# 007-0007 | 90% accuracy
+              <div className="col-5">
+                <div className="row px-4">
+                  <div
+                    className="col-12 mt-4 text-center"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    CURRENT SELECTION
                   </div>
-                  <div className="col-6 mx-auto p-5 m-3">
+                  <div
+                    className="col-12 mx-auto p-4"
+                    style={{ backgroundColor: "white" }}
+                  >
                     <img
                       src="http://via.placeholder.com/150"
-                      className="img-fluid h-100 w-100"
+                      className="img-fluid w-100"
                       alt=""
                       srcset=""
                     />
                   </div>
-                  <div className="col-12 text-center">
-                    Is the license incorrect?
+                  <div
+                    className="col-12 py-3 text-center"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    Plate# 007-0007
                   </div>
-                  <div className="col-8 mx-auto text-center mb-1">
+                  <div
+                    className="col-12 mb-4 py-3 text-center"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    <button className="btn btn-success mx-auto d-block p-1">
+                      {" "}
+                      90% accuracy
+                    </button>
+                  </div>
+                  <div
+                    className="col-12 text-center p-4"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    CONFIRM SELECTION
+                  </div>
+                  <div
+                    className="col-12 mx-auto text-center px-5 pb-5"
+                    style={{ backgroundColor: "white" }}
+                  >
+                    <b>Is this license correct?</b>
                     <input
                       className="form-control"
                       type="text"
                       value="007-0007"
                     />{" "}
                   </div>
-                  <div className="col-8 mx-auto text-center">
+                  <div
+                    className="col-12 mx-auto text-center px-5 pb-5"
+                    style={{ backgroundColor: "white" }}
+                  >
                     <button className="btn btn-block btn-primary">
                       Save correction
                     </button>
