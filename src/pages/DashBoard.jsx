@@ -15,11 +15,11 @@ const Homepage = () => {
     >
       <div className="row align-items-end">
         <div
-          className="col-3 text-white text-center text-capitalize"
+          className="col-3 pt-2 text-white text-center text-capitalize"
           style={{ backgroundColor: "black" }}
         >
           <Link to="/" style={{ textDecoration: "none" }}>
-            <h2>PlateGate</h2>
+            <h4>License Automation</h4>
           </Link>
         </div>
         <div

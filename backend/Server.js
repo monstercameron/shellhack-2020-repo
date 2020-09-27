@@ -1,4 +1,5 @@
-const app = require("express")();
+const express = require("express");
+const app = express();
 app.use(require("body-parser").json());
 app.use(require("cookie-parser")());
 // app.use(require("cors")());
@@ -165,5 +166,8 @@ app
     await db.collection(uuid).doc(`data-${docid}`).delete();
     res.status(200).send("deleted");
   });
+
+
+app.use(express.static('build'))
 
 app.listen(80, () => console.log("boom!"));

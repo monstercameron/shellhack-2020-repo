@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 export const Context = React.createContext(null);
-export const BASEURL = "http://35.226.96.109";
+export const BASEURL = "http://licenseautomation.tech/";
 
 export const injectContext = (PassedComponent) => {
   const StoreWrapper = (props) => {
